@@ -47,16 +47,7 @@ export const App = () => {
               }
             >
               <td>
-                {good === selectedGood ? (
-                  <button
-                    onClick={() => setSelectedGood('')}
-                    data-cy="RemoveButton"
-                    type="button"
-                    className="button is-info"
-                  >
-                    -
-                  </button>
-                ) : (
+                {selectedGood === '' ? (
                   <button
                     onClick={() => setSelectedGood(good)}
                     data-cy="AddButton"
@@ -65,6 +56,17 @@ export const App = () => {
                   >
                     +
                   </button>
+                ) : (
+                  good === selectedGood && (
+                    <button
+                      onClick={() => setSelectedGood('')}
+                      data-cy="RemoveButton"
+                      type="button"
+                      className="button is-info"
+                    >
+                      -
+                    </button>
+                  )
                 )}
               </td>
 
@@ -78,5 +80,3 @@ export const App = () => {
     </main>
   );
 };
-
-// I hate AI Buddy
