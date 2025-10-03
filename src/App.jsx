@@ -78,3 +78,5 @@ export const App = () => {
     </main>
   );
 };
+
+// I hate AI Buddy
